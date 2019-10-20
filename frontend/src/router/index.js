@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/auth/Login.vue'
+import BackendPage from '../views/BackendPage.vue'
+import StudentRoutes from './student-routes.js'
 
 Vue.use(VueRouter)
 
@@ -15,6 +17,18 @@ const routes = [
     path: '/auth/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/dashboard',
+    name: 'backend',
+    component: BackendPage,
+    children: [
+      {
+        name:  'student',
+        path: '/student',
+        children: StudentRoutes
+      }
+    ]
   },
   {
     path: '/about',
