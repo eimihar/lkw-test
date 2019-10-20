@@ -1,0 +1,1 @@
+- frontend project initiated with `vue create frontend`
