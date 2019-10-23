@@ -1,16 +1,14 @@
 <template>
-  <div id="dashboard">
+  <div>
     <router-view/>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'BackendPage',
-    computed: {
-      page() {
-        return 'What'
-      }
-    }
+    name: 'BackendPage'
   }
 </script>
+
+<style scoped>
+</style>

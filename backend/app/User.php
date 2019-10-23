@@ -3,14 +3,20 @@
 namespace App;
 
 use App\Contracts\Permission;
+use App\Models\StudentModel;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
     use Notifiable, HasApiTokens;
+
+    const GENDER_MALE = 'male';
+    const GENDER_FEMALE = 'female';
+    const GENDER_NON_BINARY = 'non_binary';
 
     protected $table = 'user';
 
@@ -20,7 +26,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'birth_date', 'gender'
     ];
 
     /**
@@ -43,5 +49,25 @@ class User extends Authenticatable
 
     public function role()
     {
+    }
+
+    /**
+     * Validate the password of the user for the Passport password grant.
+     *
+     * @param  string $password
+     * @return bool
+     */
+    public function validateForPassportPasswordGrant($password)
+    {
+        return Hash::check($password, $this->password);
+    }
+
+//    public function findForPassport($username) {
+//        return $this->where('username', $username)->first();
+//    }
+
+    public function student()
+    {
+        return $this->hasOne(StudentModel::class, 'user_id', 'id');
     }
 }

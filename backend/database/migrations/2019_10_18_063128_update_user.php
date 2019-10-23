@@ -14,6 +14,7 @@ class UpdateUser extends Migration
     public function up()
     {
         Schema::table('user', function (Blueprint $table) {
+            $table->primary('id');
             $table->string('role');
         });
     }

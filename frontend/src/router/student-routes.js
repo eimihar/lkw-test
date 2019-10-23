@@ -1,9 +1,9 @@
-import StudentPage from '../views/backend/StudentPage.vue'
+import ViewProfile from "../views/backend/student/ViewProfile.vue"
 
 export default [
   {
-    name: 'view',
-    path: '/view',
-    component: StudentPage
+    name: 'student-view',
+    path: 'view',
+    component: ViewProfile
   }
 ]

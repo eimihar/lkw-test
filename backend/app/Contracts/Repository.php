@@ -14,9 +14,17 @@ interface Repository
 
     public function all();
 
+    /**
+     * @param $id
+     * @return Model
+     */
     public function getById($id);
 
-    public function add(Model $model);
+    /**
+     * @param array $data
+     * @return Model
+     */
+    public function add(array $data);
 
     public function delete(Model $model);
 

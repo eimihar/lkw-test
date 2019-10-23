@@ -32,14 +32,19 @@ abstract class BaseRepository implements Repository
         return clone $this->baseQuery;
     }
 
-    public function add(Model $model)
+    public function add(array $data)
     {
-        $model->save();
+        return $this->model()::create($data);
     }
 
     public function getById($id)
     {
-        return $this->getQuery()->where('id', $id)->first();
+        return $this->getQuery()->where('id', $id)->firstOrFail();
+    }
+
+    public function update($id, array $data)
+    {
+        $this->getById($id)->fill($data);
     }
 
     public function all()

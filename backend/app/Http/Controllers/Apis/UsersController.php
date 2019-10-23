@@ -8,6 +8,7 @@ use App\Repositories\UserRepository;
 use App\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -29,9 +30,9 @@ class UsersController extends Controller
 
     public function index($role)
     {
-        return $this->userRepository->getByRole($this->roleFactory->create($role), function(Builder $query) {
-            return $query->limit(10);
-        });
+//        return $this->userRepository->getByRole($this->roleFactory->create($role), function(Builder $query) {
+//            return $query->limit(10);
+//        });
     }
 
     public function store($role, Request $request)
