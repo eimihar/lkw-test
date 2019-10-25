@@ -1,14 +1,14 @@
 # Limkokwing test
 
-## Introduction
+## 1. Introduction
 Basically the project is divided into two ends, backend and frontend. The backend serves all the APIs calling, and 
 the frontend serves purely the client end.
 
-## Installation
+## 2. Installation
 - `git clone https://github.com/eimihar/lkw-test`
 - `cd lkw-test`
 
-## Backend Set Up
+## 3. Backend Set Up
 *everything must be done in order*
 
 - `cd backend` to change to this dir
@@ -35,7 +35,7 @@ use this seeders to skip adding records
 - `php artisan db:seed --class=CoursesSeeder` to seed a sample records for courses, semesters and subjects
 - `php artisan db:seed --class=StudentsSeeder` to seed a sample records of students of existing courses
 
-## Usage
+## 4. Usage
 
 ## Serving the backend
 From the root directory
