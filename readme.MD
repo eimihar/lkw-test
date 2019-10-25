@@ -45,7 +45,7 @@ php artisan serve --port=8081
 ```
 *make sure it's served at port 8081*
 
-## serving the html
+## serving the frontend
 For the frontend app you can try the committed build without using the npm at all (if you've not installed one)
 
 From the root directory of the project,
