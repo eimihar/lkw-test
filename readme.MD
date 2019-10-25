@@ -43,7 +43,7 @@ From the root directory
 cd backend
 php artisan serve --port=8081
 ```
-*make sure it's served at port 8000*
+*make sure it's served at port 8081*
 
 ## serving the html
 For the frontend app you can try the committed build without using the npm at all (if you've not installed one)
@@ -54,8 +54,15 @@ From the root directory of the project,
 
 #### testing the app
 ##### testing admin
-- on the browser, type http://localhost:8080
-- login with `admin@limkokwing.net`
-
+- on the browser, type `http://localhost:8081`
+- login with `admin@limkokwing.net` with password `12345`
 
 ##### testing students
+- select any of the student emails when you're still logged into the admin
+- logout, then login again with the student email with password `12345`
+
+
+## Things I have not done (due to time constraints)
+- pdf reports
+- validations for most of them
+- frontend logged in routes auth
