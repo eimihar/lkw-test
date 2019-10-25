@@ -67,3 +67,4 @@ From the root directory of the project,
 - validations for most of them
   - so if you input a wrong password it'll not tell you unless you inspect element.
 - frontend logged in routes auth
+- loaders for all over the places
