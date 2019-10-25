@@ -21,10 +21,33 @@ the frontend serves purely the client end.
 - Create a database named `campus_db`
 - Update database credentials accordingly in `.env`
 
+#### generate key
+- `php artisan key:generate`
+- `php artisan config:cache`
+
 #### artisan setup (compulsory)
 - `php artisan migrate` to migrate the data
 - `php artisan passport:install`
-- `php artisan db:seed` to seed a ready oauth2 password grant and an admin you can log in with
+- `php artisan db:seed` to seed a default oauth2 password grant for frontend app and an admin you can log in with
 
 ### seeder (optional)
-- `php artisan db:seed --class=FakeSeeder` to seed a sample records for courses, semesters and subjects
+use this seeders to skip adding records
+- `php artisan db:seed --class=CoursesSeeder` to seed a sample records for courses, semesters and subjects
+- `php artisan db:seed --class=StudentsSeeder` to seed a sample records of students of existing courses
+
+
+## Usage
+For the frontend app you can try the committed build without using the npm at all
+
+#### serving the html
+From the root directory of the project,
+- `cd frontend/dist`
+- `php -S localhost:8080`
+
+#### testing the app
+##### testing admin
+- on the browser, type http://localhost:8080
+- login with `admin@limkokwing.net`
+
+
+##### testing students

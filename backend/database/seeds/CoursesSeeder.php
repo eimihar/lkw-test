@@ -7,7 +7,7 @@ use App\Models\SemesterModel;
 use App\Models\SubjectModel;
 use Illuminate\Database\Seeder;
 
-class FakeSeeder extends Seeder
+class CoursesSeeder extends Seeder
 {
     public function run()
     {
