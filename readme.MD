@@ -68,3 +68,15 @@ From the root directory of the project,
   - so if you input a wrong password it'll not tell you unless you inspect element.
 - frontend logged in routes auth
 - loaders for all over the places
+
+# Some examples
+## Admin
+![image](https://user-images.githubusercontent.com/5824953/67579867-e401c180-f777-11e9-999d-947543f4be14.png)
+![image](https://user-images.githubusercontent.com/5824953/67580774-7b1b4900-f779-11e9-942c-ca557542e0fc.png)
+![image](https://user-images.githubusercontent.com/5824953/67580800-82425700-f779-11e9-9b6c-3d2cc5c1d002.png)
+![image](https://user-images.githubusercontent.com/5824953/67580823-8c645580-f779-11e9-8e63-63da7c7fad22.png)
+![image](https://user-images.githubusercontent.com/5824953/67580835-8ff7dc80-f779-11e9-926b-c647812a2b04.png)
+
+## Student
+![image](https://user-images.githubusercontent.com/5824953/67580919-b158c880-f779-11e9-86c7-74c0ccf32854.png)
+![image](https://user-images.githubusercontent.com/5824953/67580939-b61d7c80-f779-11e9-9bde-ecd708cf351f.png)
