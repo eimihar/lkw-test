@@ -4,6 +4,10 @@
 Basically the project is divided into two ends, backend and frontend. The backend serves all the APIs calling, and 
 the frontend serves purely the client end.
 
+## Installation
+- `git clone https://github.com/eimihar/lkw-test`
+- `cd lkw-test`
+
 ## Backend Set Up
 *everything must be done in order*
 
@@ -13,7 +17,7 @@ the frontend serves purely the client end.
 - `composer install`
 
 #### .env setup (compulsory)
-- Copy `.env.example` to `.env`
+- `cp .env.example .env`
 - Create a database named `campus_db`
 - Update database credentials accordingly in `.env`
 

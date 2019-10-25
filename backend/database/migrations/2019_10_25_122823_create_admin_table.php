@@ -15,10 +15,7 @@ class CreateAdminTable extends Migration
     {
         Schema::create('admin', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('subject_id');
-            $table->integer('student_id');
-            $table->decimal('score');
-            $table->boolean('is_marked');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
