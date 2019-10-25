@@ -25,7 +25,7 @@ class CourseStudentsController extends Controller
         if ($userRepo->isExist($request->post('email')))
             throw new ApiUserException('Email already exist');
 
-        $user = $userRepo->add($request->all(array_merge(['email', 'full_name', 'birth_date', 'gender'], ['password' => $request->post('password', Hash::make(12345))])));
+        $user = $userRepo->add($request->all(array_merge(['email', 'full_name', 'birth_date', 'gender'], ['password' => $request->post('password', 12345)])));
 
         $studentRepo->add([
             'course_id' => $courseId,
