@@ -14,8 +14,12 @@ class CreateSubjectMarkingTable extends Migration
     public function up()
     {
         Schema::create('subject_marking', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->increments('id');
+            $table->integer('subject_id');
+            $table->integer('student_id');
+            $table->decimal('score');
+            $table->boolean('is_marked');
+            $table->nullableTimestamps();
         });
     }
 
