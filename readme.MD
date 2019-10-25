@@ -68,6 +68,7 @@ From the root directory of the project,
   - so if you input a wrong password it'll not tell you unless you inspect element.
 - frontend logged in routes auth check
 - loaders for all over the places
+- edit/delete students, course, semester, subject
 
 # Some examples
 ## Admin
