@@ -19,7 +19,7 @@ class CreateSubjectMarkingTable extends Migration
             $table->integer('student_id');
             $table->decimal('score');
             $table->boolean('is_marked');
-            $table->nullableTimestamps();
+            $table->timestamps();
         });
     }
 
