@@ -21,12 +21,12 @@ the frontend serves purely the client end.
 - Create a database named `campus_db`
 - Update database credentials accordingly in `.env`
 
-#### generate key
+#### generate key (compulsory)
 - `php artisan key:generate`
 - `php artisan config:cache`
 
 #### artisan setup (compulsory)
-- `php artisan migrate` to migrate the data
+- `php artisan migrate` to migrate the tables
 - `php artisan passport:install`
 - `php artisan db:seed` to seed a default oauth2 password grant for frontend app and an admin you can log in with
 
@@ -35,11 +35,19 @@ use this seeders to skip adding records
 - `php artisan db:seed --class=CoursesSeeder` to seed a sample records for courses, semesters and subjects
 - `php artisan db:seed --class=StudentsSeeder` to seed a sample records of students of existing courses
 
-
 ## Usage
-For the frontend app you can try the committed build without using the npm at all
 
-#### serving the html
+## Serving the backend
+From the root directory
+```
+cd backend
+php artisan serve
+```
+*make sure it's served at port 8000*
+
+## serving the html
+For the frontend app you can try the committed build without using the npm at all (if you've not installed one)
+
 From the root directory of the project,
 - `cd frontend/dist`
 - `php -S localhost:8080`
