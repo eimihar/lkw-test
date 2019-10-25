@@ -12,6 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([\App\Faker\FakeSeeder::class]);
+        $this->call([
+            AdminSeeder::class,
+            OauthSeeder::class
+            ]);
     }
 }

@@ -59,6 +59,12 @@ $schema->table('student', function (Table $table) {
     $table->nullableTimestamps();
 });
 
+$schema->table('admin', function (Table $table) {
+    $table->increments('id');
+    $table->integer('user_id');
+    $table->nullableTimestamps();
+});
+
 $schema->table('subject_marking', function (Table $table) {
     $table->increments('id');
     $table->integer('subject_id');

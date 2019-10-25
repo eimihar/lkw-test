@@ -64,8 +64,13 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  // if (!['login'].includes(to.name))
-  //   return next({name: 'login'});
+  if (!['login'].includes(to.name)) {
+    if (!store.getters.isLoggedIn) {
+      return next({name: 'login'});
+    } else {
+      router.app.$axios.defaults.headers.common['Authorization'] = 'Bearer '+ store.getters.token;
+    }
+  }
 
   // middleware.
   if (!to.meta.middleware)

@@ -12,4 +12,9 @@ class SemesterModel extends BaseModel
     {
         return $this->hasOne(CourseModel::class, 'id', 'course_id');
     }
+
+    public function subjects()
+    {
+        return $this->hasMany(SubjectModel::class, 'semester_id', 'id');
+    }
 }

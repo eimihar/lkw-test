@@ -11,7 +11,7 @@ class SubjectMarkingController extends Controller
 {
     public function index(SubjectMarkingRepository $repository, SubjectRepository $subjectRepository, $subjectId)
     {
-        return $repository->getMarking($subjectRepository->getById($subjectId));
+        return $repository->forSubject($subjectRepository->getById($subjectId));
     }
 
     public function store(SubjectMarkingRepository $repository, Request $request)

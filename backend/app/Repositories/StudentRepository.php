@@ -14,4 +14,10 @@ class StudentRepository extends BaseRepository
     {
         return StudentModel::class;
     }
+
+    public function byUserId($id)
+    {
+        return $this->getQuery()->where('user_id', $id)
+            ->firstOrFail();
+    }
 }

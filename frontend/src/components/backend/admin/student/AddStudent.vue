@@ -63,6 +63,8 @@ export default {
     },
     async submit() {
       await this.$axios.post('admin/courses/' + this.course.id + '/students', this.student);
+
+      this.$emit('submitted');
     }
   }
 }

@@ -1,4 +1,6 @@
 <script>
+  import config from '../../config';
+
   export default {
     name: 'Login',
     created() {
@@ -8,21 +10,27 @@
       login: async function() {
         let resp = await this.$axios.post('/oauth/token', {
           grant_type: 'password',
-          client_id: 7,
-          client_secret: 'MlatJlqeX8eRCXN0Ufgt0vg5S5tLEfNjjTVK9W2X',
+          client_id: config.clientId,
+          client_secret: config.clientSecret,
           username: this.email,
           password: this.password,
           scope: '*'
         });
 
-        let respUser = await this.$axios.get('/me', {
+        let respUser = (await this.$axios.get('/me', {
           headers: {
             Authorization: 'Bearer ' + resp.data.access_token
           }
-        });
+        })).data;
 
+//        this.$router.push({name: 'student-view'});
+        await this.$store.commit('saveSession', {session: resp.data, user: respUser});
 
-        this.$router.push({name: 'student-view'});
+        if (respUser.admin) {
+          this.$router.push({name: 'admin-manage-courses'});
+        } else {
+          this.$router.push({name: 'student-view-profile'});
+        }
 //        await this.$store.commit('saveSession', resp.data);
 
 //        if (respUser.role === 'student') {

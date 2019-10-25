@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Contracts\Permission;
+use App\Models\AdminModel;
 use App\Models\StudentModel;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -69,5 +70,10 @@ class User extends Authenticatable
     public function student()
     {
         return $this->hasOne(StudentModel::class, 'user_id', 'id');
+    }
+
+    public function admin()
+    {
+        return $this->hasOne(AdminModel::class, 'user_id', 'id');
     }
 }

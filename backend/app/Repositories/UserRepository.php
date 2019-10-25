@@ -42,6 +42,8 @@ class UserRepository extends BaseRepository
 
         if (!$data['password'])
             $data['password'] = Hash::make(12345);
+        else
+            $data['password'] = Hash::make($data['password']);
 
         foreach ($data as $key => $value) {
             $user->$key = $value;

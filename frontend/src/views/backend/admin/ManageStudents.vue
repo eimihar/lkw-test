@@ -9,7 +9,7 @@
         </ul>
       </div>
       <div class="col-sm-9" v-if="course && addStudent">
-        <AddStudent @cancelled="addStudent = null" :course="addStudent"></AddStudent>
+        <AddStudent @submitted="addStudentSubmitted" @cancelled="addStudent = null" :course="addStudent"></AddStudent>
       </div>
       <div class="col-sm-9" v-if="course && !addStudent">
         <div class="header-manage-student">
@@ -71,6 +71,10 @@
       },
       async register() {
         this.addStudent = this.course;
+      },
+      addStudentSubmitted() {
+        this.addStudent = null;
+        this.selectCourse(this.course);
       }
     }
   }

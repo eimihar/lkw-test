@@ -25,11 +25,18 @@ export default new Vuex.Store({
       return {
         Authorization: 'Bearer ' + state.session.access_token
       }
+    },
+    token(state) {
+      return state.session.access_token;
+    },
+    user(state) {
+      return state.user;
     }
   },
   mutations: {
-    saveSession(state, session) {
-      state.session = session;
+    saveSession(state, data) {
+      state.session = data.session;
+      state.user = data.user;
     }
   },
   actions: {
