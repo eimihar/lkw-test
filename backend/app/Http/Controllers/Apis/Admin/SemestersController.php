@@ -50,7 +50,9 @@ class SemestersController extends Controller
     {
         $repository->add([
             'course_id' => $course->id,
-            'no' => $request->post('no')
+            'no' => $request->post('no'),
+            'month' => $request->post('month'),
+            'year' => $request->post('year')
         ]);
     }
 

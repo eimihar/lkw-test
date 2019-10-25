@@ -20,11 +20,21 @@ class CourseFaker extends BaseFaker
 
     public function totalSemester()
     {
-        return [5, 6, 7][$this->getDistributedIndex('total_semester', 3)];
+        return range(5, 7)[$this->getDistributedIndex('total_semester', 3)];
     }
 
     public function totalSubjects()
     {
-        return [4, 5, 6][$this->getDistributedIndex('total_subjects', 3)];
+        return range(4, 6)[$this->getDistributedIndex('total_subjects', 3)];
+    }
+
+    public function intakeMonth()
+    {
+        return range(1, 12)[$this->getDistributedIndex('intake_month', 12)];
+    }
+
+    public function intakeYear()
+    {
+        return range(2019, 2020)[$this->getDistributedIndex('intake_year', 2)];
     }
 }

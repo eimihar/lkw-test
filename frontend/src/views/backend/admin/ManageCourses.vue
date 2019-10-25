@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-3 course-nav">
         <ul id="course-list">
-          <li v-for="course in courses" :key="course.id">
+          <li v-for="course in courses" :key="course.id" :class="{active: selectedCourse && course.id == selectedCourse.id}">
             <div @click="selectCourse(course)">{{ course.name }}</div>
           </li>
         </ul>
-        <div>
-          <input type="button" @click="addCourse" class="btn btn-primary" value="Add new course" />
+        <div style="text-align: right; margin-top: 15px;">
+          <a href="javascript:;" @click="addCourse" style="text-decoration: underline;">Add new course</a>
         </div>
       </div>
       <div v-if="!component">
@@ -39,7 +39,8 @@
       return {
         courses: [],
         component: null,
-        props: {}
+        props: {},
+        selectedCourse: null
       }
     },
     components: {AddCourse, ViewCourse},
@@ -56,6 +57,7 @@
         });
       },
       selectCourse(course) {
+        this.selectedCourse = course;
         this.useComponent('ViewCourse', {course: course});
       },
       useComponent(component, props) {
@@ -74,16 +76,30 @@
 </script>
 
 <style lang="scss">
+  .course-nav {
+    background: #e7f1fe;
+    padding: 10px;
+    padding-top: 5px;
+    position: relative;
+    top: -15px;
+    min-height: 500px;
+  }
   #course-list {
     list-style: none;
     padding: 0px;
     margin: 0px;
+    font-size: 15px;
 
     li {
       padding: 5px;
       margin-bottom: 4px;
       cursor: pointer;
       border-bottom: 1px solid gainsboro;
+
+      &.active {
+        font-weight: bold;
+        font-size: 1.1em;
+      }
     }
   }
 </style>

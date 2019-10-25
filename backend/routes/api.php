@@ -38,6 +38,8 @@ Route::middleware([/*'auth:api', */\App\Http\Middleware\ApiResponse::class, 'cor
         Route::apiResource('courses/{courseId}/students', \App\Http\Controllers\Apis\Admin\CourseStudentsController::class)->parameter('students', 'studentId');
         Route::apiResource('courses/{courseId}/semesters', \App\Http\Controllers\Apis\Admin\SemestersController::class)->parameter('semesters', 'semesterId');
         Route::apiResource('courses/{courseId}/semesters/{semesterId}/subjects', SubjectsController::class)->parameter('subjects', 'subjectId');
+
+        Route::apiResource('marking/{subjectId}', \App\Http\Controllers\Apis\Admin\SubjectMarkingController::class)->only(['index', 'store']);
     });
 //    Route::apiResource('', 'Apis\\UsersController')->parameter('', 'user');
 });

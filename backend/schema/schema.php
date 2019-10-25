@@ -30,6 +30,8 @@ $schema->table('user', function (Table $table) {
 $schema->table('course', function (Table $table) {
     $table->increments('id');
     $table->string('name');
+    $table->integer('intake_month');
+    $table->integer('intake_year');
     $table->nullableTimestamps();
 });
 
@@ -37,6 +39,8 @@ $schema->table('semester', function (Table $table) {
     $table->increments('id');
     $table->integer('course_id');
     $table->integer('no');
+    $table->integer('month');
+    $table->integer('year');
     $table->nullableTimestamps();
 });
 
@@ -55,11 +59,11 @@ $schema->table('student', function (Table $table) {
     $table->nullableTimestamps();
 });
 
-$schema->table('student_subject', function (Table $table) {
-   $table->increments('id');
-   $table->integer('student_id');
-   $table->integer('subject_id');
-   $table->decimal('marks');
-   $table->nullableTimestamps();
+$schema->table('subject_marking', function (Table $table) {
+    $table->increments('id');
+    $table->integer('subject_id');
+    $table->integer('student_id');
+    $table->decimal('score');
+    $table->boolean('is_marked');
+    $table->nullableTimestamps();
 });
-

@@ -14,4 +14,13 @@ class CourseRepository extends BaseRepository
     {
         return CourseModel::class;
     }
+
+    public function allWithTotalStudents()
+    {
+        return $this->getQuery()
+            ->join('student', 'student.course_id', '=', 'course.id', 'left')
+            ->selectRaw('course.*, count(student.id) as total_students')
+            ->groupBy('course.id')
+            ->get();
+    }
 }

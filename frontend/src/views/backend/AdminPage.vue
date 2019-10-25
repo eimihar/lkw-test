@@ -4,11 +4,20 @@
       <div class="top-nav">
         <ul>
           <li>
-            <i class="fas fa-book"></i>
-            <router-link :to="{name: 'admin-manage-courses'}">Courses</router-link></li>
+            <router-link :to="{name: 'admin-manage-courses'}" :class="{active: isRoute('admin-manage-courses')}">
+              <i class="fas fa-book"></i>
+              Courses</router-link></li>
           <li>
-            <i class="fas fa-users"></i>
-            <router-link :to="{name: 'admin-manage-students'}">Students</router-link></li>
+            <router-link :to="{name: 'admin-manage-students'}" :class="{active: isRoute('admin-manage-students')}">
+              <i class="fas fa-users"></i>
+              Students</router-link>
+          </li>
+          <li style="float: right;">
+            <a href="javascript:;" @click="logout">
+              <i class="fas fa-power-off"></i>
+              Logout
+            </a>
+          </li>
         </ul>
       </div>
       <div id="content-body" class="card">
@@ -22,7 +31,15 @@
 
 <script>
   export default {
-    name: "StudentPage"
+    name: "StudentPage",
+    methods: {
+      logout() {
+        this.$router.push({name: 'login'});
+      },
+      isRoute(route) {
+        this.$router.currentRoute.name == route;
+      }
+    }
   }
 </script>
 
@@ -32,6 +49,7 @@
   }
   #content-body {
     margin-top: 0px;
+    min-height: 500px;
   }
 
   .top-nav {
@@ -60,6 +78,14 @@
 
         a {
           color: white;
+
+          &.router-link-active {
+            background: #075bc2;
+            padding: 5px 10px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+          }
         }
       }
     }
