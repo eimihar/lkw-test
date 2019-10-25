@@ -65,4 +65,5 @@ From the root directory of the project,
 ## Things I have not done (due to time constraints)
 - pdf reports
 - validations for most of them
+  - so if you input a wrong password it'll not tell you unless you inspect element.
 - frontend logged in routes auth
