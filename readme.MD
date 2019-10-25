@@ -41,7 +41,7 @@ use this seeders to skip adding records
 From the root directory
 ```
 cd backend
-php artisan serve
+php artisan serve --port=8081
 ```
 *make sure it's served at port 8000*
 
