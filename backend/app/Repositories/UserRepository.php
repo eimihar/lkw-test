@@ -40,7 +40,7 @@ class UserRepository extends BaseRepository
     {
         $user = new User();
 
-        if (!$data['password'])
+        if (!isset($data['password']))
             $data['password'] = Hash::make(12345);
         else
             $data['password'] = Hash::make($data['password']);
